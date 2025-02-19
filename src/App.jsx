@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from './components/About';
 import Contact from './components/Contact';
 import RestaurantMenu from './components/RestaurantMenu';
-
+import Help from './components/Help';
 
 const App = () => {
   const [bannerTitle, setBannerTitle] = useState([]);
@@ -23,7 +23,7 @@ const App = () => {
   }, []);
 
   let fetchData = async () => {
-    let Data = await fetch("https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.6093912&lng=75.1397935&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    let Data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.6093912&lng=75.1397935&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     let json = await Data.json();
     console.log(json);
     setResList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
@@ -78,6 +78,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/restaurant/:resId" element={<RestaurantMenu />} />
+          <Route path="/Help" element={<Help />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>

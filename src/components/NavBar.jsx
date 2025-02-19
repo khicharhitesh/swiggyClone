@@ -16,6 +16,7 @@ const Navbar = () => {
         <Link to={"/"}  className='text-gray-700 hover:text-green-600 transition'>Home</Link>
         <Link to={"/about"}  className='text-gray-700 hover:text-green-600 transition'>About</Link>
         <Link to={"/contact"}  className='text-gray-700 hover:text-green-600 transition'>Contact</Link>
+        <Link to={"/Help"}  className='text-gray-700 hover:text-green-600 transition'>Help</Link>
         <button 
           className='ml-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all duration-300' 
           onClick={toggleLogin}
